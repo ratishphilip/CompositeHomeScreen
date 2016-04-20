@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{1BF82E00-A8E4-4F5B-95B5-A80373929E80}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CompositeHomeScreen</RootNamespace>
+    <AssemblyName>CompositeHomeScreen</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.14295.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.14295.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>CompositeHomeScreen_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CompositionCommon\CompositionImage.cs" />
+    <Compile Include="CompositionCommon\SurfaceLoader.cs" />
+    <Compile Include="CompositionCommon\UIElementExtensionMethods.cs" />
+    <Compile Include="CompositionCommon\VisualTreeHelperExtensions.cs" />
+    <Compile Include="HomeScreen.xaml.cs">
+      <DependentUpon>HomeScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MenuButton.xaml.cs">
+      <DependentUpon>MenuButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AppStorePage.xaml.cs">
+      <DependentUpon>AppStorePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CalculatorPage.xaml.cs">
+      <DependentUpon>CalculatorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CameraPage.xaml.cs">
+      <DependentUpon>CameraPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ClockPage.xaml.cs">
+      <DependentUpon>ClockPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ContactsPage.xaml.cs">
+      <DependentUpon>ContactsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FaceTimePage.xaml.cs">
+      <DependentUpon>FaceTimePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\GameCenterPage.xaml.cs">
+      <DependentUpon>GameCenterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\iBooksPage.xaml.cs">
+      <DependentUpon>iBooksPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\iCloudPage.xaml.cs">
+      <DependentUpon>iCloudPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MailPage.xaml.cs">
+      <DependentUpon>MailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MapsPage.xaml.cs">
+      <DependentUpon>MapsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MessagesPage.xaml.cs">
+      <DependentUpon>MessagesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MusicPage.xaml.cs">
+      <DependentUpon>MusicPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NewsPage.xaml.cs">
+      <DependentUpon>NewsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NotesPage.xaml.cs">
+      <DependentUpon>NotesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PhonePage.xaml.cs">
+      <DependentUpon>PhonePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PhotosPage.xaml.cs">
+      <DependentUpon>PhotosPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RemindersPage.xaml.cs">
+      <DependentUpon>RemindersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SafariPage.xaml.cs">
+      <DependentUpon>SafariPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SkypePage.xaml.cs">
+      <DependentUpon>SkypePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WalletPage.xaml.cs">
+      <DependentUpon>WalletPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WeatherPage.xaml.cs">
+      <DependentUpon>WeatherPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\YoutubePage.xaml.cs">
+      <DependentUpon>YoutubePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="CompositeHomeScreen_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Backgrounds\Wallpaper1.png" />
+    <Content Include="Assets\Icons\AppStore.png" />
+    <Content Include="Assets\Icons\Calculator.png" />
+    <Content Include="Assets\Icons\Camera.png" />
+    <Content Include="Assets\Icons\Clock.png" />
+    <Content Include="Assets\Icons\Contacts.png" />
+    <Content Include="Assets\Icons\FaceTime.png" />
+    <Content Include="Assets\Icons\GameCenter.png" />
+    <Content Include="Assets\Icons\homebtn.png" />
+    <Content Include="Assets\Icons\iBooks.png" />
+    <Content Include="Assets\Icons\iCloud.png" />
+    <Content Include="Assets\Icons\Mail.png" />
+    <Content Include="Assets\Icons\Maps.png" />
+    <Content Include="Assets\Icons\Messages.png" />
+    <Content Include="Assets\Icons\Music.png" />
+    <Content Include="Assets\Icons\News.png" />
+    <Content Include="Assets\Icons\Notes.png" />
+    <Content Include="Assets\Icons\Phone.png" />
+    <Content Include="Assets\Icons\PhotoBooth.png" />
+    <Content Include="Assets\Icons\Photos.png" />
+    <Content Include="Assets\Icons\Reminders.png" />
+    <Content Include="Assets\Icons\Safari.png" />
+    <Content Include="Assets\Icons\Settings.png" />
+    <Content Include="Assets\Icons\Skype.png" />
+    <Content Include="Assets\Icons\Wallet.png" />
+    <Content Include="Assets\Icons\Weather.png" />
+    <Content Include="Assets\Icons\Youtube.png" />
+    <Content Include="Assets\Screens\Calculator.jpg" />
+    <Content Include="Assets\Screens\Clock.png" />
+    <Content Include="Assets\Screens\Mail.png" />
+    <Content Include="Assets\Screens\Maps.png" />
+    <Content Include="Assets\Screens\Messages.png" />
+    <Content Include="Assets\Screens\PhoneDialler.jpg" />
+    <Content Include="Assets\Screens\Settings.png" />
+    <Content Include="Assets\Screens\Skype.png" />
+    <Content Include="Assets\Screens\WalletContent.png" />
+    <Content Include="Assets\Screens\Weather.png" />
+    <Content Include="Assets\Screens\YouTubeContent.png" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="HomeScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MenuButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AppStorePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CalculatorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CameraPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ClockPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ContactsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\FaceTimePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\GameCenterPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\iBooksPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\iCloudPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MapsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MessagesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MusicPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\NewsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\NotesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PhonePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PhotosPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\RemindersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SafariPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SkypePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\WalletPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\WeatherPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\YoutubePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

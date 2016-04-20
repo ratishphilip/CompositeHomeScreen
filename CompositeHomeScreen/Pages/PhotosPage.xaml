@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="CompositionTests.Pages.PhotosPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CompositionTests.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid x:Name="RootGrid"
+              Width="400"
+              Height="700"
+              HorizontalAlignment="Center"
+              VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="120"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Border Background="#ff3b30"></Border>
+            <TextBlock FontSize="64"
+                       FontWeight="Light"
+                       Margin="10">Photos</TextBlock>
+            <Border Grid.Row="1"
+                    Background="#efefef"></Border>
+            <Grid x:Name="Content"
+                  Grid.Row="1"
+                  Margin="10">
+                <ScrollViewer>
+                    <TextBlock FontSize="24"
+                               TextWrapping="WrapWholeWords"
+                               TextAlignment="Justify"
+                               Margin="5,5,5,10">Ut placerat porttitor vestibulum. Duis lobortis lectus sed lacus tempus bibendum. Ut maximus pretium eros, ut luctus leo molestie ac. Fusce vehicula in sapien et hendrerit. Proin sed mi convallis, accumsan justo sit amet, efficitur risus. Praesent a pharetra velit. Cras ac turpis tempor, porttitor lacus sit amet, venenatis nisl. Curabitur ornare tincidunt faucibus. Pellentesque sollicitudin efficitur metus condimentum volutpat. Integer rutrum imperdiet arcu, et imperdiet quam fermentum sed. Pellentesque sodales aliquet lobortis. Cras sit amet facilisis quam, id volutpat ante. Nullam sed orci augue. Nulla imperdiet mi non sapien varius fermentum. Donec consequat ante a varius molestie. Pellentesque lorem felis, dictum vel luctus quis, dignissim eu leo.</TextBlock>
+                </ScrollViewer>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

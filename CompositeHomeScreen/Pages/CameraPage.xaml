@@ -1,0 +1,37 @@
+﻿<Page x:Class="CompositionTests.Pages.CameraPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:CompositionTests.Pages"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid x:Name="RootGrid"
+              Width="400"
+              Height="700"
+              HorizontalAlignment="Center"
+              VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="120"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Border Background="#ff3b30"></Border>
+            <TextBlock FontSize="64"
+                       FontWeight="Light"
+                       Margin="10">Camera</TextBlock>
+            <Border Grid.Row="1"
+                    Background="#efefef"></Border>
+            <Grid x:Name="Content"
+                  Grid.Row="1"
+                  Margin="10">
+                <ScrollViewer>
+                    <TextBlock FontSize="24"
+                               TextWrapping="WrapWholeWords"
+                               TextAlignment="Justify"
+                               Margin="5,5,5,10">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate, mi eu tincidunt consequat, leo felis iaculis nunc, id eleifend nibh ante ut mauris. Sed elementum tristique orci, vitae auctor sem faucibus ac. Fusce ullamcorper pharetra dolor, quis interdum turpis suscipit a. Sed eu dapibus libero. Duis maximus purus et enim euismod, a scelerisque sapien lacinia. Ut tempus erat id tellus lacinia pulvinar. Morbi in augue elementum, porta sapien sed, condimentum arcu. Cras dui nunc, accumsan sit amet lorem mollis, mattis scelerisque ante. Vestibulum justo eros, dignissim in pharetra quis, viverra non augue. Donec non urna vitae ligula vestibulum placerat sed sed sem. Nam faucibus finibus libero, id finibus nunc sollicitudin vel.</TextBlock>
+                </ScrollViewer>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

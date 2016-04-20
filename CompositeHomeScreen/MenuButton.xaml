@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="CompositeHomeScreen.MenuButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="using:CompositionTests"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:compositionCommon="using:CompositionCommon"
+             mc:Ignorable="d"
+             HorizontalAlignment="Center"
+             VerticalAlignment="Center"
+             x:Name="parent"
+             d:DesignHeight="300"
+             d:DesignWidth="400">
+
+    <Grid>
+        <Border Width="60"
+                Height="60"
+                CornerRadius="20"
+                Background="White"></Border>
+        <compositionCommon:CompositionImage x:Name="AppImage"
+                                        Stretch="Uniform"
+                                        IsHitTestVisible="False"></compositionCommon:CompositionImage>
+        <TextBlock Text="{Binding ElementName=parent, Path=AppName}"
+                   FontSize="12"
+                   Foreground="White"
+                   FontWeight="SemiBold"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Bottom"
+                   Margin="0,14,0,-14"></TextBlock>
+    </Grid>
+</UserControl>
