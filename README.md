@@ -18,7 +18,7 @@ Animation is triggered by two events -
   * The __MenuGrid__ scales up and fades out.
   * A white rectangular visual (having the same size as the icon) is created and placed in the __CompositionGrid__ at the selected icon's location. It is then scaled up and faded in to fit the size of the __MenuGrid__.
   * The __ContentGrid__ also scales up and fades in to fit the size of the __MenuGrid__.
-  * Once the animation completes, the __ContentFrame__ navigates to the appropriate content page.
+  * Once the animation completes, the __ContentFrame__ navigates to the appropriate content page. (__Note__: _There is a flag_ ***_loadContentDuringAnimation*** *which when set to __true__ will navigate to the content page as soon as the animation starts. If set to __false__, it will navigate to the content page only after the animation batch completes*)
 - When the user presses the Home button (at the bottom)
   * The __ContentGrid__ scales down and fades out.
   * The white rectangular visual also scales down and fades out.
