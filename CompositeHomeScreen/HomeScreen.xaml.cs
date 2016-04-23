@@ -214,7 +214,7 @@ namespace CompositeHomeScreen
             transitionContentVisual = ElementCompositionPreview.GetElementVisual(ContentGrid);
             transitionContentVisual.Scale = new Vector3(1 / _scaleX, 1 / _scaleY, 0);
             transitionContentVisual.Offset = offset;
-            transitionContentVisual.CenterPoint = centerPoint;
+            //transitionContentVisual.CenterPoint = centerPoint;
             // Transition Background Visual
             transitionBGVisual = _compositor.CreateSpriteVisual();
             transitionBGVisual.Brush = _compositor.CreateColorBrush(Colors.White);
